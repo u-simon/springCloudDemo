@@ -9,8 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>microservice-api</module>
-        <module>microservice-provider-dept</module>
-        <module>microservice-consumer-dept</module>
+        <module>microservice-provider</module>
+        <module>microservice-consumer</module>
         <module>microservice-eureka</module>
     </modules>
     <packaging>pom</packaging>
@@ -78,4 +78,25 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <finalName>microservice</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimit>$</delimit>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

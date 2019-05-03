@@ -3,6 +3,7 @@ package com.simon.springcloud;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @Author simon
@@ -10,8 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @MapperScan("com.simon.springcloud.mapper")
+@EnableEurekaClient
 public class Provider {
-
     public static void main(String[] args) {
         SpringApplication.run(Provider.class, args);
     }
