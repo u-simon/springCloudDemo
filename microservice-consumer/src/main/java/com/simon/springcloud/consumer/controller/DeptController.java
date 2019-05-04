@@ -23,20 +23,21 @@ public class DeptController {
     @Autowired
     RestTemplate restTemplate;
 
-    private static final String URL = "http://localhost:8001/dept";
+//    private static final String URL = "http://localhost:8001";
+    private static final String URL = "http://MICROSERVICE-PROVIDER";
 
     @RequestMapping(value = "/add", method = POST)
     public boolean add(Dept dept){
-        return restTemplate.postForObject(URL + "/add", Dept.class, Boolean.class);
+        return restTemplate.postForObject(URL + "/dept/add", Dept.class, Boolean.class);
     }
 
     @RequestMapping( value = "/get/{id}", method = GET)
     public Dept get(@PathVariable Long id){
-        return restTemplate.getForObject(URL + "/get/"+id, Dept.class);
+        return restTemplate.getForObject(URL + "/dept/get/"+id, Dept.class);
     }
 
     @RequestMapping(value = "/list", method = GET)
     public List<Dept> list(){
-        return restTemplate.getForObject(URL + "/list" , List.class);
+        return restTemplate.getForObject(URL + "/dept/list" , List.class);
     }
 }

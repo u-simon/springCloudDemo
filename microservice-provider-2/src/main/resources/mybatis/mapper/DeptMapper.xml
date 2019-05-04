@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.simon.springcloud.mapper.DeptMapper">
+    <select id="queryById" parameterType="java.lang.Long" resultType="com.simon.springcloud.model.Dept">
+        select deptno, dname, db_source from dept where deptno = #{id}
+    </select>
+
+    <select id="queryAll" resultType="com.simon.springcloud.model.Dept">
+        select deptno ,dname, db_source from dept
+    </select>
+
+    <insert id="add" parameterType="com.simon.springcloud.model.Dept" useGeneratedKeys="true" keyProperty="deptno">
+            insert into dept(dname, db_source) values(#{dname}, database())
+    </insert>
+</mapper>
