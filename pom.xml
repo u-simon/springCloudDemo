@@ -16,6 +16,7 @@
         <module>microservice-eureka-3</module>
         <module>microservice-provider-2</module>
         <module>microservice-provider-3</module>
+        <module>microservice-consumer-feign</module>
     </modules>
     <packaging>pom</packaging>
 
