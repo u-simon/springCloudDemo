@@ -19,6 +19,7 @@
         <module>microservice-consumer-feign</module>
         <module>microservice-provider-hystrix</module>
         <module>microservice-hystrix-dashboard</module>
+        <module>microservice-zuul-gateway</module>
     </modules>
     <packaging>pom</packaging>
 
